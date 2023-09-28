@@ -22,32 +22,15 @@ struct ContentView: View {
             List(sandwiches) { item in
              
                 HStack {
-                    // A - Colocando um Text aqui resolve... 😮‍💨
-                //   Text("")
                       
                     ///8 - Adicionando uma navigation Link passando item.name
-                    NavigationLink(destination: Text(item.name)) {
-                        Image(item.imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .cornerRadius(3.0)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            /// 4 - Aqui consigo acessar o titulo, chamndo item.name
-                            Text(item.name)
-                            
-                            ///5 - Aqui consigo acessar o numero de ingredientes por meio de uma interpolação, devido o ingredientCont ser do tipo Int.
-                            Text("\(item.ingredientCount) ingredients")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
+                    SandwichCell(item: item)
       
                 }
-                
+                .listRowSeparator(.visible)
             }
+         
+            
             ///7 - Escrevendo o titulo.
             .navigationTitle("Sandwiches")
         }
@@ -59,4 +42,34 @@ struct ContentView: View {
     /// 2 - Passando o array de dados para o preview
 
     ContentView(sandwiches: testData)
+}
+
+//9 - A view que foi extraida da lista
+struct SandwichCell: View {
+    
+    /// 10 Temos que passar o item aqui. E depois passar na view acima.
+    
+    var item: Sandwich
+    
+    
+    var body: some View {
+        NavigationLink(destination: Text(item.name)) {
+            Image(item.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 40, height: 40)
+                .cornerRadius(3.0)
+            
+            VStack(alignment: .leading) {
+                
+                /// 4 - Aqui consigo acessar o titulo, chamndo item.name
+                Text(item.name)
+                
+                ///5 - Aqui consigo acessar o numero de ingredientes por meio de uma interpolação, devido o ingredientCont ser do tipo Int.
+                Text("\(item.ingredientCount) ingredients")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
 }
