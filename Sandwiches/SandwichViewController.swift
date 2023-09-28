@@ -7,12 +7,25 @@
 
 import SwiftUI
 
-struct SandwichViewController: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    SandwichViewController()
-}
+// 
+//class SandwichViewController: UIViewController {
+//    func zoomIn() {
+//        zoom = true
+//        updateSubviews()
+//    }
+//    
+//    func enhance() {
+//        state = .enhancing
+//        updateSubviews()
+//        enhancer.enhance(sandwich.image, scale: scale){
+//            state = .enhanced
+//            updateSubviews()
+//        }
+//        
+//    }
+//    
+//    func zoomOut() {
+//        zoomed = false
+//        updateSubviews()
+//    }
+//}

@@ -19,15 +19,25 @@ struct ContentView: View {
         ///6 - Adicioando um titulo
         NavigationStack{
             
-            List(sandwiches) { item in
-             
-                HStack {
-                      
-                    ///8 - Adicionando uma navigation Link passando item.name
-                    SandwichCell(item: item)
-      
+            List {
+                ForEach(sandwiches) { item in
+                    
+                    HStack {
+                        
+                        SandwichCell(item: item)
+                        
+                    }
                 }
-                .listRowSeparator(.visible)
+                
+                ///11 - Criando um Text que tem a contagem dos Sandwiches.
+                HStack {
+                    Spacer()
+                    Text("\(sandwiches.count) Sandwiches")
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                    
+                    .listRowSeparator(.visible)
+                }
             }
          
             
@@ -53,7 +63,10 @@ struct SandwichCell: View {
     
     
     var body: some View {
-        NavigationLink(destination: Text(item.name)) {
+        
+        ///8 - Adicionando uma navigation Link passando item.name
+        ///15 - Passamos aqui a DatailView Criada na destination
+        NavigationLink(destination:SandwichDetail(sandwich: item)) {
             Image(item.imageName)
                 .resizable()
                 .scaledToFill()
