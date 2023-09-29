@@ -33,6 +33,11 @@ struct ContentView: View {
                     }
                 }
                 
+            ///36 - Chamando as funcoes
+            
+                .onMove(perform: moveSandwiches)
+                .onDelete(perform: deleteSandwiches)
+                
                 ///11 - Criando um Text que tem a contagem dos Sandwiches.
                 HStack {
                     Spacer()
@@ -47,7 +52,23 @@ struct ContentView: View {
             
             ///7 - Escrevendo o titulo.
             .navigationTitle("Sandwiches")
+           
             
+            /// 37 - Adicionando um Toolbar,  button Edition para o acesso as funcoes excluir e mover.
+          .toolbar {
+
+                ToolbarItem(placement: .topBarLeading) {
+            #if os(iOS)
+           EditButton()
+            #endif
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    ///38 - Botao para add novo Sandwich
+                    Button("Add", action: makeSandwich)
+                }
+            }
+         
             /// 34 -  Criando um Text
             Text("Select a sandwich")
                 .font(.largeTitle)
