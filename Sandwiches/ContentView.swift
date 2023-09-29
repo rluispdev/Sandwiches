@@ -11,7 +11,11 @@ import SwiftUI
 struct ContentView: View {
     /// 1 - Passando o array de dados  vazio criados aqui.
     
-    var sandwiches: [Sandwich] = []
+    
+    ///33 - Mudamos essa    var sandwiches: [Sandwich] = [] para    var store: SandwinchStore com @ObservedObject, e em todos sandwiches devemos chamar apartir da var store dessa forma, store.sandwiches
+    //var sandwiches: [Sandwich] = []
+  @ObservedObject  var store: SandwinchStore
+
     
     var body: some View {
        /// 3 - Passo a variavel que recebe o array vazio
@@ -20,7 +24,7 @@ struct ContentView: View {
         NavigationStack{
             
             List {
-                ForEach(sandwiches) { item in
+                ForEach(store.sandwiches) { item in
                     
                     HStack {
                         
@@ -32,7 +36,7 @@ struct ContentView: View {
                 ///11 - Criando um Text que tem a contagem dos Sandwiches.
                 HStack {
                     Spacer()
-                    Text("\(sandwiches.count) Sandwiches")
+                    Text("\(store.sandwiches.count) Sandwiches")
                         .foregroundStyle(.secondary)
                     Spacer()
                     
@@ -43,15 +47,41 @@ struct ContentView: View {
             
             ///7 - Escrevendo o titulo.
             .navigationTitle("Sandwiches")
+            
+            /// 34 -  Criando um Text
+            Text("Select a sandwich")
+                .font(.largeTitle)
         }
        
     }
+    
+    ///35 - Criando funcoes para fazer, mover e deletar
+    
+    func makeSandwich() {
+        withAnimation{
+            store.sandwiches.append(Sandwich(name: "Patty melt", ingredientCount: 3))
+        }
+    }
+    
+    func moveSandwiches(from: IndexSet, to: Int){
+        withAnimation {
+            store.sandwiches.move(fromOffsets: from, toOffset: to)
+        }
+    }
+    
+    func deleteSandwiches(offsets: IndexSet) {
+        withAnimation {
+            store.sandwiches.remove(atOffsets: offsets)
+        }
+    }
+    
 }
 
 #Preview {
     /// 2 - Passando o array de dados para o preview
 
-    ContentView(sandwiches: testData)
+    ///34 - E agora passar store: testStore para o preview
+    ContentView(store: testStore)
 }
 
 //9 - A view que foi extraida da lista
@@ -60,8 +90,6 @@ struct SandwichCell: View {
     /// 10 Temos que passar o item aqui. E depois passar na view acima.
     
     var item: Sandwich
-    
-    
     var body: some View {
         
         ///8 - Adicionando uma navigation Link passando item.name

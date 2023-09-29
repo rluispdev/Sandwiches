@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F60D7742AC6305200A48027 /* SandwichDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60D7732AC6305200A48027 /* SandwichDetail.swift */; };
 		8F60D7762AC6384100A48027 /* SandwichViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60D7752AC6384100A48027 /* SandwichViewController.swift */; };
+		8F60D7782AC6ECC800A48027 /* SandwinchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60D7772AC6ECC800A48027 /* SandwinchStore.swift */; };
 		8FFA49D82AC5A74600122758 /* SandwichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFA49D72AC5A74600122758 /* SandwichesApp.swift */; };
 		8FFA49DA2AC5A74600122758 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFA49D92AC5A74600122758 /* ContentView.swift */; };
 		8FFA49DC2AC5A74700122758 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FFA49DB2AC5A74700122758 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		8F60D7732AC6305200A48027 /* SandwichDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichDetail.swift; sourceTree = "<group>"; };
 		8F60D7752AC6384100A48027 /* SandwichViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichViewController.swift; sourceTree = "<group>"; };
+		8F60D7772AC6ECC800A48027 /* SandwinchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwinchStore.swift; sourceTree = "<group>"; };
 		8FFA49D42AC5A74600122758 /* Sandwiches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sandwiches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFA49D72AC5A74600122758 /* SandwichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandwichesApp.swift; sourceTree = "<group>"; };
 		8FFA49D92AC5A74600122758 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				8FFA49D72AC5A74600122758 /* SandwichesApp.swift */,
 				8FFA49D92AC5A74600122758 /* ContentView.swift */,
 				8F60D7732AC6305200A48027 /* SandwichDetail.swift */,
+				8F60D7772AC6ECC800A48027 /* SandwinchStore.swift */,
 				8F60D7752AC6384100A48027 /* SandwichViewController.swift */,
 				8FFA49E62AC5A77F00122758 /* Sandwich.swift */,
 				8FFA49DB2AC5A74700122758 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FFA49DA2AC5A74600122758 /* ContentView.swift in Sources */,
+				8F60D7782AC6ECC800A48027 /* SandwinchStore.swift in Sources */,
 				8FFA49D82AC5A74600122758 /* SandwichesApp.swift in Sources */,
 				8FFA49E72AC5A77F00122758 /* Sandwich.swift in Sources */,
 				8F60D7762AC6384100A48027 /* SandwichViewController.swift in Sources */,

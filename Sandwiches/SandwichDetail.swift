@@ -40,8 +40,8 @@ struct SandwichDetail: View {
             /// 24 - Adicionando o   Spacer(minLength: 0)
             Spacer(minLength: 0)
             
-            ///29 - Adicioanamos    if sandwich.isSpicy  na Label + modificadores
-            if sandwich.isSpicy {
+            ///29 - Adicioanamos  if sandwich.isSpicy  na Label + modificadores e && !zoomed para que a barra Spicy saia quando tiver o zoom
+            if sandwich.isSpicy && !zoomed {
                 ///27 - Criamos um HStack para Label e adicionamos 2 Spacer( ) para centralizar.
                 HStack{
                     
@@ -58,6 +58,8 @@ struct SandwichDetail: View {
                 .font(Font.headline.smallCaps())
                 .background(.red)
                 .foregroundColor(.yellow)
+                /// 30 - Adicionando uma transicao de saida para a barra Spicy   .transition(.move(edge: .bottom))
+                .transition(.move(edge: .bottom))
             }
         }
         /// 16 - Adicionando um Navigation Title
@@ -72,6 +74,6 @@ struct SandwichDetail: View {
     ///13 - Passando no Preview tbm!
     ///17 - Adicionando uma navigation Stack
     NavigationStack {
-        SandwichDetail(sandwich: testData[0])
+        SandwichDetail(sandwich: testData[1])
     }
 }
